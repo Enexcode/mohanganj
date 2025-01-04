@@ -1,0 +1,2 @@
+font-family: "Noto Serif Bengali", serif; 
+font-family: "Rubik", serif;

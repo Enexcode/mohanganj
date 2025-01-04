@@ -1,0 +1,247 @@
+/* ========== Google Font Family Style  */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif+Bengali:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
+  font-family: "Noto Serif Bengali", serif; 
+  background-color: var(--dark_color);
+}
+a{
+  text-decoration: none;
+}
+:root {
+  --primary_color: #2ecc71; 
+  /* --secondary_color: #39d353;  */
+  --white_color: #ffffff;
+  --dark_color: #0b141d; 
+}
+/*  
+===============================
+========== Home Page ==========
+===============================
+  */
+
+/* ========== Navbar Css Here =========== */
+.navbar{
+  background-color: var(--dark_color);
+  height: 60px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar img {
+    width: 200px;
+}
+
+.hamburger {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  font-size: inherit;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hamburger.is-sm {
+  font-size: 1rem;
+}
+
+.hamburger.is-md {
+  font-size: 1.5rem;
+}
+
+.hamburger.is-lg {
+  font-size: 2rem;
+}
+
+.hamburger-line {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 0.125em;
+  border-radius: 0.125em;
+  background: var(--white_color);
+  transition: inherit;
+
+}
+
+.hamburger-line:nth-child(1) {
+  top: 0.125em;
+}
+
+.hamburger.is-active .hamburger-line:nth-child(1),
+.w-nav-button.w--open .hamburger-line:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotateZ(-135deg);
+}
+
+.hamburger-line:nth-child(2) {
+  top: 0.438em;
+}
+
+.hamburger.is-active .hamburger-line:nth-child(2),
+.w-nav-button.w--open .hamburger-line:nth-child(2) {
+  right: 50%;
+  width: 0;
+}
+
+.hamburger-line:nth-child(3) {
+  top: 0.75em;
+  width: 0.625em;
+}
+
+.hamburger.is-active .hamburger-line:nth-child(3),
+.w-nav-button.w--open .hamburger-line:nth-child(3) {
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%) rotateZ(135deg);
+}
+
+.navbar-toggler {
+	padding: 0;
+	font-size: 1.25rem;
+	line-height: 1;
+	background-color: transparent;
+	border-radius: .25rem;
+	transition: box-shadow .15s ease-in-out;
+}
+.navbar-toggler:focus {
+	text-decoration: none;
+	outline: 0;
+	box-shadow: 0 0 0 0;
+}
+.navbar-collapse{
+  /* position: absolute; */
+  top: 0;
+}
+/* Initially position the navbar off-screen to the left */
+#navbarSupportedContent {
+  position: fixed;
+  top: 60px;
+  left: -100%; /* Position it off-screen to the left */
+  width: 250px; /* Adjust the width as per your need */
+  height: 100%;
+  padding-left: 20px;
+  background-color: var(--dark_color); /* You can change the background color */
+  transition: left 0.3s ease; /* Smooth transition for the left property */
+  z-index: 1050; /* Ensure the navbar is above other content */
+}
+
+/* When the navbar is open, slide it into the screen */
+#navbarSupportedContent.show {
+  left: 0;
+}
+.nav-link{
+  color: var(--white_color);
+  font-size: 16px;
+}
+.nav-link.active{
+  color: var(--primary_color);
+  font-size: 16px;
+}
+
+/* =========== Banner Area Here  */
+.slick-dots{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding-left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: 0px;
+}
+.slick-dots li{
+  width: 10px;
+  height: 10px;
+  background-color: var(--dark_color);
+  border-radius: 100px;
+  margin: 0 2px;
+}
+.slick-dots li.slick-active{
+  width: 20px;
+  height: 10px;
+  background-color: var(--primary_color);
+  border-radius: 100px;
+  margin: 0 2px;
+}
+.slick-dots li button{
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  width: 10px;
+  height: 10px;
+}
+
+.card {
+  position: relative; /* Make the card relative for the pseudo-element */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+
+/* Pseudo-element for the gradient border */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 15px; /* Slightly more to cover the card's rounded corners */
+  background: linear-gradient(45deg, #ff6ec4, #7873f5); /* Gradient border */
+  z-index: -1; /* Behind the card */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Card active state */
+.card.active::before {
+  opacity: 1;
+}
+
+.card.active {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+	border-radius: 15%;
+	margin: 0px 0px 10px 0px;
+	height: 70px !important;
+	/* background: var(--primary_color); */
+	padding: 4px;
+}
+
+#manu_area h2 {
+  margin: 10px 0;
+  background: linear-gradient(45deg, var(--primary_color), var(--white_color)); /* Gradient for title */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: color 0.3s ease; /* Smooth transition for color change */
+  display: inline-block;
+  text-align: center !important;
+}
+#profileCard h4{
+  color: var(--dark_color);
+  margin-bottom: 0;
+}
+
+/* Change h2 color to white when the card is active */
+.card.active h2 {
+  color: white; /* Change text color to white */
+  -webkit-background-clip: none; /* Remove background clip for gradient */
+  -webkit-text-fill-color: white; /* Ensure text is white */
+}
+#manu_area .col-4{
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-bottom: 10px;
+}
