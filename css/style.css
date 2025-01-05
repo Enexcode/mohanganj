@@ -4,6 +4,7 @@
 body{
   font-family: "Noto Serif Bengali", serif; 
   background-color: var(--dark_color);
+  padding-bottom: 80px;
 }
 a{
   text-decoration: none;
@@ -244,4 +245,99 @@ a{
   padding-left: 4px;
   padding-right: 4px;
   margin-bottom: 10px;
+}
+
+
+.bottom_nav nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  height: 60px;
+}
+
+.bottom_nav  .nav-box {
+  display: flex;
+  padding: 8px;
+  background-color: var(--dark_color);
+  box-shadow: 0px 0px 16px 0px #4444;
+  border-radius: 8px;
+}
+.bottom_nav  .nav-container {
+  display: flex;
+  width: 100%;
+  list-style: none;
+  justify-content: space-around;
+}
+.bottom_nav .nav__item {
+  display: flex;
+  position: relative;
+  padding: 2px;
+}
+.bottom_nav .nav__item.active .nav__item-icon {
+  margin-top: -26px;
+  box-shadow: 0px 0px 16px 0px var(--primary_color);
+}
+.bottom_nav .nav__item.active .nav__item-text {
+  transform: scale(1);
+}
+.bottom_nav .nav__item-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary_color);
+  text-decoration: none;
+}
+.bottom_nav .nav__item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6em;
+  background-color: var(--white_color);
+  border-radius: 50%;
+  height: 46px;
+  width: 46px;
+  transition: margin-top 250ms ease-in-out, box-shadow 250ms ease-in-out;
+}
+.bottom_nav .nav__item-icon i {
+  color: var(--dark_color);
+}
+.bottom_nav .nav__item-text {
+  position: absolute;
+  bottom: 0;
+  transform: scale(0);
+  transition: transform 250ms ease-in-out;
+}
+
+/*  
+===============================
+========== History Page ==========
+===============================
+  */
+.history_text img{
+  margin-top: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.history_text h3{
+  color: var(--primary_color);
+}
+.history_text h5{
+  color: var(--primary_color);
+}
+.history_text p{
+  color: var(--white_color);
+}
+.history_text h6{
+  color: var(--primary_color);
+}
+.back_button{
+  text-decoration: none;
+  font-size: 28px;
+  color: var(--white_color);
+}
+.page_title{
+color: var(--primary_color);
 }
